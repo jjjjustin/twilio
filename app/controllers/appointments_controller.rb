@@ -28,6 +28,11 @@ class AppointmentsController < ApplicationController
 
     respond_to do |format|
       if @appointment.save
+        Appointment.send_reminder_text_message("Who:  #{@appointment.who}
+                                                Where #{@appointment.where}
+                                                When  #{@appointment.when}
+                                                What  #{@appointment.what}
+                                                Why   #{@appointment.why}" )
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
         format.json { render :show, status: :created, location: @appointment }
       else
