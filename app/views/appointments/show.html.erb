@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Who:</strong>
+  <%= @appointment.who %>
+</p>
+
+<p>
+  <strong>What:</strong>
+  <%= @appointment.what %>
+</p>
+
+<p>
+  <strong>When:</strong>
+  <%= @appointment.when %>
+</p>
+
+<p>
+  <strong>Why:</strong>
+  <%= @appointment.why %>
+</p>
+
+<p>
+  <strong>Where:</strong>
+  <%= @appointment.where %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>
